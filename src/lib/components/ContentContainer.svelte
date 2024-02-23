@@ -1,42 +1,82 @@
 <script>
     import containerBg from "$lib/images/shelby-content-container.png";
+
+    export let photo = "";
+    export let left = true;
 </script>
 
-<div class="content-container" style="background-image: url({containerBg});">
+<div class="container">
+    {#if photo && left}
+        <img src={photo} alt="" class="photo" />
+    {/if}
+
     <div class="text-container">
-        <slot />
+        <img src={containerBg} alt="" class="container-bg" />
+        <div class="text">
+            <slot />
+        </div>
     </div>
+
+    {#if photo && !left}
+        <img src={photo} alt="" class="photo" />
+    {/if}
 </div>
 
 <style>
-    .content-container {
-        position: relative;
-        background-size: 100% 100%;
-        background-position: center center;
-        background-repeat: no-repeat;
+    .container {
         display: flex;
-        justify-content: center;
+        flex-direction: row;
         align-items: center;
-        padding: 16vh 15vw;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .photo {
+        max-width: 40%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .text-container {
-        padding: 2rem;
-        border-radius: 10px;
-        max-width: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        position: relative;
+    }
+
+    .container-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        font-family: "Source Sans Pro", sans-serif;
-        text-align: center;
+        height: 100%;
+        z-index: 0;
+        filter: sepia(100%)
+    }
+
+    .text {
+        position: relative;
+        z-index: 1;
+        color: #000000;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 8rem;
     }
 
     @media (max-width: 768px) {
-        .text-container {
-            padding: 3rem;
-            max-width: 90%;
+        .container {
+            flex-direction: column;
         }
 
-        .content-container {
-            padding: 10vh 5vw;
+        .photo {
+            max-width: 100%;
+        }
+
+        .text {
+            margin: 2rem;
         }
     }
 </style>
