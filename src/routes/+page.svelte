@@ -18,11 +18,13 @@
     <ContentImageLeft photo={shelbyEthan4}>
         <p class="info-text large-text">
             October 4-6, 2024<br />
-            <a href="/where" class="info-link"
-                >Trout Creek Wilderness Lodge
-                <br />
-                Molalla, OR</a
-            >
+            <!-- <a href="/where" class="info-link"
+                > -->
+            Trout Creek Wilderness Lodge
+            <br />
+            Molalla, OR
+            <!-- </a
+            > -->
         </p>
 
         <p class="info-text">
