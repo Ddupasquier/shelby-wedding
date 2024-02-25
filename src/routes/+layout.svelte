@@ -48,5 +48,6 @@ Change project name to what Shleby wants
 
 	.call-to-action {
 		width: 100%;
+		margin-right: 2rem;
 	}
 </style>
