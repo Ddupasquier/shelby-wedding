@@ -12,7 +12,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
         gap: 1rem;
         position: relative;
         overflow: hidden;
@@ -23,5 +23,15 @@
         height: auto;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .gallery {
+            flex-direction: column;
+        }
+
+        .photo {
+            max-width: 100%;
+        }
     }
 </style>

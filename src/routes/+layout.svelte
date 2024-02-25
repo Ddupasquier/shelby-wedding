@@ -1,6 +1,13 @@
+<!-- 
+
+H! to right
+Change project name to what Shleby wants
+
+ -->
+
 <script>
 	import Footer from "$lib/components/Footer.svelte";
-import "./styles.css";
+	import "./styles.css";
 </script>
 
 <div class="app">
@@ -37,5 +44,9 @@ import "./styles.css";
 		margin: 0 auto;
 		box-sizing: border-box;
 		position: relative;
+	}
+
+	.call-to-action {
+		width: 100%;
 	}
 </style>
